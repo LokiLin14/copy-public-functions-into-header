@@ -1,7 +1,6 @@
 # Variables for easier maintenance
 CC = cc
 TARGET = copy-public-functions-into-header
-INCLUDES = easy-args/includes/easyargs.h
 TEST_SRC = ./test/source.c
 TEST_HDR = ./test/source.h
 TEST_OUT = ./test/actual_output.h
@@ -10,7 +9,7 @@ TEST_GOLDEN = ./test/expected_output.h
 # Default target
 build: $(TARGET)
 
-$(TARGET): main.c $(INCLUDES)
+$(TARGET): main.c
 	$(CC) main.c -o $(TARGET)
 
 test: $(TARGET)
