@@ -1,3 +1,6 @@
-[submodule "easy-args"]
-	path = easy-args
+[submodule "external/sds"]
+	path = external/sds
+	url = https://github.com/antirez/sds.git
+[submodule "external/easy-args"]
+	path = external/easy-args
 	url = https://github.com/gouwsxander/easy-args.git
