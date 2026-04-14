@@ -27,3 +27,19 @@ OPTIONS:
     -h          Show help
     -d          Dry run, print to stdout instead of overwriting header file
 ```
+
+## How to include this in other cmake projects
+
+To use this project in your own cmake projects simply include the CMakeLists.txt project: `include(copy-public-functions-into-header/CMakeLists.txt)`. After the project your cmake project has been built, the `copy-declarations` executable should appear in your CMAKE_BUILD_DIRECTORY/bin directory.
+
+Example cmake project: 
+```cmake 
+add_subdirectory(external/copy-public-functions-into-header)
+add_custom_target(copy-declarations-into-headers
+        COMMAND copy-declarations -h
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        COMMENT "Copying function declarations in their headers"
+        VERBATIM
+)
+
+```
